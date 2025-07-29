@@ -1,0 +1,109 @@
+/* Reset minimal */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: none;
+}
+
+
+.register-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Formulaire */
+.register-form {
+  max-width: 400px;
+  width: 100%;
+  color: #004466;
+  text-align: center;
+}
+
+/* Titre */
+.register-form h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+  color: #0077b6; 
+}
+
+/* Inputs */
+.register-form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #00b4d8;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #004466;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.register-form input::placeholder {
+  color: #0077b6;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #0077b6;
+}
+
+/* Bouton */
+.register-form button {
+  background: linear-gradient(45deg, #00b4d8, #0077b6);
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e0f7fa;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 180, 216, 0.6);
+  transition: background 0.4s ease;
+}
+
+.register-form button:hover {
+  background: linear-gradient(45deg, #0077b6, #00b4d8);
+  box-shadow: 0 6px 12px rgba(0, 180, 216, 0.9);
+}
+
+/* Message */
+.alert {
+  background-color: transparent;
+  color: #0077b6;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 2px solid #0077b6;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.redirect-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #0077b6;
+}
+
+.redirect-text a {
+  color: #00b4d8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.redirect-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive */
+@media (max-width: 480px) {
+  .register-form {
+    padding: 0 1rem;
+  }
+}

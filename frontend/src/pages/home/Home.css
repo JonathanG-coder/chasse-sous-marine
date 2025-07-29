@@ -1,0 +1,67 @@
+/* ===== Reset global et mise en place de la hauteur ===== */
+html, body, #root, .App, .home-container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Conteneur principal avec effet eau ===== */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* pleine hauteur visible pour accepter l'enfant (rappel : img animée) */
+}
+
+/* ===== Bannière avec titre + slogan ===== */
+.titleBanniere {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10; /* au-dessus de WaterWaveEffect */
+  color: rgb(0, 0, 0);
+}
+
+/* ===== Conteneur horizontal pour le bouton + le titre animé ===== */
+.title-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* ===== Bouton du phare ===== */
+.light-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* ===== Image du phare ===== */
+.iconLightHouse {
+  width: 90px; 
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.iconLightHouse:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.titleHeader {
+  font-size: clamp(3rem, 8vw, 6rem); 
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5em 0;
+  color: inherit;
+}
+
+/* ===== Texte du slogan ===== */
+.slogan {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: rgba(0, 0, 0, 0.75);
+  font-style: italic;
+}

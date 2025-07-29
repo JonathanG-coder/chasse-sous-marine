@@ -1,0 +1,30 @@
+[
+  {
+    "_id": { "$oid": "687b70f0ee7d091943d11789" },
+    "nom": "Poissons côtiers fréquents"
+  },
+  {
+    "_id": { "$oid": "687b7128ee7d091943d1178b" },
+    "nom": "Crustacés présents sur la côte"
+  },
+  {
+    "_id": { "$oid": "687b712eee7d091943d1178d" },
+    "nom": "Céphalopodes observables en bord de côte"
+  },
+  {
+    "_id": { "$oid": "687b713bee7d091943d1178f" },
+    "nom": "Végétaux marins et algues"
+  },
+  {
+    "_id": { "$oid": "687b7146ee7d091943d11791" },
+    "nom": "Animaux fixés / invertébrés"
+  },
+  {
+    "_id": { "$oid": "687b714fee7d091943d11793" },
+    "nom": "Coquillages"
+  },
+  {
+    "_id": { "$oid": "687b715aee7d091943d11795" },
+    "nom": "Types de rochers côtiers"
+  }
+]

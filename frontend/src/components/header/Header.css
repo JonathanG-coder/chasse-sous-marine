@@ -1,0 +1,141 @@
+/* ===== Curseur personnalisé ===== */
+.line-container,
+.line-container *,
+.line-item,
+.line-item *,
+img,
+svg {
+  cursor: url('/curseur/fishIconW.png'), auto !important;
+}
+
+
+/* ===== Conteneur menu (droite écran) ===== */
+.line-container {
+  position: fixed;
+  right: 0vw;
+  top: 0;
+  height: 100vh;
+  width: 14vw;
+  /* transform: translateX(-20%); */
+  pointer-events: auto;
+  z-index: 1000;
+}
+
+.line-container.dark {
+  color: white;
+}
+
+/* ===== Icone menu burger ===== */
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  pointer-events: auto;
+}
+
+/* ===== Ligne verticale ===== */
+.line {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    #d0f0ff,
+    #d0f0ff 5px,
+    #0088cc 5px,
+    #0088cc 10px
+  );
+  transform: translateX(-50%);
+}
+
+/* ===== Items sur la ligne ===== */
+.line-item {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  pointer-events: auto;
+  z-index: 1100;
+}
+
+.label {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background 0.3s ease;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.line-item a {
+  text-decoration: none;
+  color: white;
+}
+
+
+.line-item:hover .label {
+  background: rgba(7, 84, 173, 0.8);
+}
+
+/* ===== Icônes des items ===== */
+.hook-img {
+  margin-left: 10px;
+  position: relative;
+  z-index: 1200;
+}
+
+
+
+.logout-button {
+  background: transparent !important; 
+  border: none !important;           
+  padding: 0 !important; 
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .line-container {
+    width: 120px;
+    transform: translateX(0%);
+  }
+
+  .left-light-toggle {
+    top: 10px;
+    left: 10px;
+  }
+
+
+  .menu-icon {
+    top: 10px;
+    left: 10px;
+  }
+
+  .hook-img {
+    width: 40px;
+    height: auto;
+    margin-left: 10px;
+  }
+
+  .label {
+    font-size: 11px;
+    padding: 1px 4px;
+    margin-left: 5px;
+    margin-top: 3px;
+  }
+}

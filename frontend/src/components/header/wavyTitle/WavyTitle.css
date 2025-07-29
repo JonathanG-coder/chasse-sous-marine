@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  visibility: hidden;
+}
+
+.split-char {
+  will-change: transform, opacity;
+}
+
+.titleHeader {
+  font-size: clamp(2rem, 5vw, 4rem); /* clamp rappel : permet un bon responsive */
+  font-weight: bold;
+  text-align: center;
+  /* color: white; */
+  margin: 0;
+  padding: 0.5em;
+}
