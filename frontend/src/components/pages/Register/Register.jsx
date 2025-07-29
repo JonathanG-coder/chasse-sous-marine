@@ -6,7 +6,7 @@ import './Register.css';
 const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Register() {
-  const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '' });
+  const [form, setForm] = useState({ name: '',lastname: '', email: '', password: '', confirmPassword: '' });
   const [message, setMessage] = useState('');
 
   const handleChange = e => {
