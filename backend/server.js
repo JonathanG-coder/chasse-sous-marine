@@ -27,8 +27,8 @@ app.use(cookieParser());
 
 // ✅ CORS Configuration
 const allowedOrigins = [
-  'https://chasse-sous-marine.vercel.app', // Frontend en production
-  'http://localhost:3000' // Pour les tests en local
+  process.env.CLIENT_URL,                  // frontend local (dev)
+  'https://chasse-sous-marine.vercel.app' // frontend production
 ];
 
 app.use(cors({

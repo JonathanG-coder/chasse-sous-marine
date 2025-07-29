@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext.jsx";
+import { AuthProvider } from "./context/AuthProvider.jsx";
 import { ThemeProvider } from "./context/themeContext.jsx";
 import PrivateRoute from "./components/PrivateRoute.jsx";
 
