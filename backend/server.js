@@ -25,45 +25,49 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 
-// Configuration CORS spécifique pour permettre les credentials
-const allowedOrigins = ['https://chasse-sous-marine.vercel.app'];
+// ✅ CORS Configuration
+const allowedOrigins = [
+  'https://chasse-sous-marine.vercel.app', // Frontend en production
+  'http://localhost:3000' // Pour les tests en local
+];
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Autoriser les requêtes sans origin (ex: Postman ou serveurs backend)
-    if (!origin) return callback(null, true);
-    if (!allowedOrigins.includes(origin)) {
-      const msg = `L'origine CORS ${origin} n'est pas autorisée.`;
-      return callback(new Error(msg), false);
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`L'origine CORS ${origin} n'est pas autorisée.`));
     }
-    return callback(null, true);
   },
   credentials: true,
 }));
 
 app.use(helmet());
 
-// Démarrage des tâches planifiées (cron)
+// ✅ Lancement des CRON
 deleteUserCron.start();
 auditDependencies.start();
 
-// Routes principales
+// ✅ Routes principales
 app.use('/', userRoutes);
 app.use('/', categoryRoutes);
 app.use('/', especeRoutes);
 app.use('/', preventionRoutes);
 app.use('/api/images', imageRoutes);
 
-// Routes d'authentification
+// ✅ Routes d'authentification
 app.use('/api/auth', authRoutes);
 
+// ✅ Route de test serveur
 app.get('/', (req, res) => {
   res.send('<h2>Bonjour du serveur</h2>');
 });
 
 const PORT = process.env.PORT || 3023;
 
-const server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const server = app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT}`)
+);
 
 process.on('unhandledRejection', (err) => {
   console.error('Unhandled Rejection:', err);
