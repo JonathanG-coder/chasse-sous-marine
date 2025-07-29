@@ -42,7 +42,7 @@ export default function WavyTitle() {
       <h1 className="titleHeader">
  <span className="wavy">
   chasse{' '}
-  sous{' '}
+  sous-
   marine.
 </span>
 
