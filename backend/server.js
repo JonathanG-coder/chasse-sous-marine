@@ -3,20 +3,20 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
-import deleteUserCron from "./middleware/deleteUser.js";
+import deleteUserCron from './middleware/deleteUser.js';
 import auditDependencies from './middleware/auditDependencies.js';
 import helmet from 'helmet';
 import cors from 'cors';
 
-// Faire import des routes
-import categoryRoutes from "./routes/categoryRoute.js";
-import especeRoutes from "./routes/especeRoute.js";
-import userRoutes from "./routes/userRoute.js";
-import preventionRoutes from "./routes/preventionRoute.js";
-import imageRoutes from "./routes/imageRoute.js";
+// Import des routes
+import categoryRoutes from './routes/categoryRoute.js';
+import especeRoutes from './routes/especeRoute.js';
+import userRoutes from './routes/userRoute.js';
+import preventionRoutes from './routes/preventionRoute.js';
+import imageRoutes from './routes/imageRoute.js';
 
 dotenv.config();
-console.log("MONGO_URI utilisé :", process.env.MONGO_URI);
+console.log('MONGO_URI utilisé :', process.env.MONGO_URI);
 
 const app = express();
 
@@ -29,10 +29,10 @@ app.use(cookieParser());
 const allowedOrigins = ['https://chasse-sous-marine.vercel.app'];
 
 app.use(cors({
-  origin: function(origin, callback) {
-    // Autoriser les requêtes sans origin (ex: Postman, serveurs)
+  origin: (origin, callback) => {
+    // Autoriser les requêtes sans origin (ex: Postman ou serveurs backend)
     if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
+    if (!allowedOrigins.includes(origin)) {
       const msg = `L'origine CORS ${origin} n'est pas autorisée.`;
       return callback(new Error(msg), false);
     }
@@ -43,22 +43,22 @@ app.use(cors({
 
 app.use(helmet());
 
-// Démarre le cron
+// Démarrage des tâches planifiées (cron)
 deleteUserCron.start();
 auditDependencies.start();
 
-// Autres routes
+// Routes principales
 app.use('/', userRoutes);
 app.use('/', categoryRoutes);
 app.use('/', especeRoutes);
 app.use('/', preventionRoutes);
 app.use('/api/images', imageRoutes);
 
-// Ajout des routes d'authentification avec un préfixe '/api'
+// Routes d'authentification
 app.use('/api/auth', authRoutes);
 
-app.get("/", (req, res) => {
-    res.send('<h2>Bonjour du serveur</h2>');
+app.get('/', (req, res) => {
+  res.send('<h2>Bonjour du serveur</h2>');
 });
 
 const PORT = process.env.PORT || 3023;
