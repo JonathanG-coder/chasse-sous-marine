@@ -33,6 +33,7 @@ export default function Register() {
         <h2>Inscription</h2>
         {message && <div className="alert">{message}</div>}
         <input name="name" placeholder="Nom" onChange={handleChange} required />
+        <input name="lastname" placeholder="Prénom" onChange={handleChange} required />
         <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
         <input name="password" type="password" placeholder="Mot de passe" onChange={handleChange} required />
         <input name="confirmPassword" type="password" placeholder="Confirmer mot de passe" onChange={handleChange} required />
