@@ -37,16 +37,16 @@ const items = [
     iconDark: iconFishW,
   },
   {
-    label: "Déconnexion",
-    action: "logout",
-    iconLight: iconBubbleB,
-    iconDark: iconBubbleW,
-  },
-  {
     label: "Preventions",
     link: "/preventions",
     iconLight: iconPlongB,
     iconDark: iconPlongW,
+  },
+  {
+    label: "Déconnexion",
+    action: "logout",
+    iconLight: iconBubbleB,
+    iconDark: iconBubbleW,
   },
 ];
 

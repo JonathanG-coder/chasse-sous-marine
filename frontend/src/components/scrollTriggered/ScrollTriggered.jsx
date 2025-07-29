@@ -1,3 +1,5 @@
+// Lien du code original : https://examples.motion.dev/react/scroll-triggered
+
 import { motion as Motion } from 'framer-motion';
 import './ScrollTriggered.css';
 

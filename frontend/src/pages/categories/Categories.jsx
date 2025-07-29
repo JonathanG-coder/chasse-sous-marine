@@ -5,13 +5,12 @@ import "./Categories.css";
 const Categories = () => {
   return (
     <>
-    <div className="especeContainer">
-      <h1 className="especeTitle">🪸 Faune et flore marine côtière du 64</h1>
-    </div>
-    <RollingGallery autoplay={true} pauseOnHover={true} />
+      <div className="especeTitleWrapper">
+        <h1 className="especeTitle">Faune et flore marine côtière du 64</h1>
+      </div>
+      <RollingGallery autoplay={true} pauseOnHover={true} />
     </>
   );
 };
-
 
 export default Categories;

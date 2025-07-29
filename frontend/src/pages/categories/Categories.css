@@ -9,25 +9,24 @@ html, body, #root {
   overflow-x: hidden;
 }
 
-  body {
-        background-image: url('/images/ocean1.jpg');
-     }
-
-
-
-.especeContainer {
-  display: flex;
-  justify-content: center; 
-  align-items: flex-end;   
-
+body {
+  background-image: url('/images/ocean1.jpg');
 }
 
-.especeContainer h1 {
-  max-width: 100%;
+.especeTitleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: -30px;
+}
+
+.especeTitle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #0077b6;
+  margin: 0;
+  text-shadow: none; 
 }
