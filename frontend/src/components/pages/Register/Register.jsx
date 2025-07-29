@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';  // <-- importer Link
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Register.css';
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '' });
@@ -18,7 +20,7 @@ export default function Register() {
       return;
     }
     try {
-      const res = await axios.post('/api/auth/register', form);
+      const res = await axios.post(`${API_URL}/api/auth/register`, form, { withCredentials: true });
       setMessage(res.data.message);
     } catch (err) {
       setMessage(err.response?.data?.message || 'Erreur serveur');
