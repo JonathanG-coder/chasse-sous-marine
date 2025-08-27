@@ -25,7 +25,7 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 
-// ✅ CORS Configuration
+//  CORS Configuration
 const allowedOrigins = [
   process.env.CLIENT_URL,                  // frontend local (dev)
   'https://chasse-sous-marine.vercel.app' // frontend production
@@ -44,21 +44,21 @@ app.use(cors({
 
 app.use(helmet());
 
-// ✅ Lancement des CRON
+// Lancement des CRON
 deleteUserCron.start();
 auditDependencies.start();
 
-// ✅ Routes principales
+//  Routes principales
 app.use('/', userRoutes);
 app.use('/', categoryRoutes);
 app.use('/', especeRoutes);
 app.use('/', preventionRoutes);
 app.use('/api/images', imageRoutes);
 
-// ✅ Routes d'authentification
+// Routes d'authentification
 app.use('/api/auth', authRoutes);
 
-// ✅ Route de test serveur
+// Route de test serveur
 app.get('/', (req, res) => {
   res.send('<h2>Bonjour du serveur</h2>');
 });

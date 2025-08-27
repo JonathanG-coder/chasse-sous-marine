@@ -2,14 +2,18 @@ import Category from "../models/Category.js"
 
 // Creation de la categorie
 export const createCategory = async (req, res) => {
-    try {
-        const category = new Category({nom: req.body.nom})
-        await category.save()
-        res.status(201).json(category)
-    } catch (error) {
-        res.status(400).json({error : error.message})
-    }
-}
+  try {
+    const { nom } = req.body;
+    const image = req.file?.path || ''; // récupération du chemin de l'image, ou chaîne vide si pas d'image
+
+    const category = new Category({ nom, image });
+    await category.save();
+    res.status(201).json(category);
+  } catch (error) {
+    res.status(500).json({ message: 'Erreur lors de la création' });
+  }
+};
+
 
 
 // Récupérer toutes les catégories
@@ -18,7 +22,7 @@ export const getAllCategories = async (req, res) => {
         const category = await Category.find();
         res.json(category);
     } catch (error) {
-        res.status(500).json({ error: "Erreur serveur" });
+        res.status(500).json({ error: "Erreur lors de la récuperation", error });
     }
 };
 

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMotionValue, useAnimation, useTransform } from "framer-motion";
 import { motion as Motion } from "framer-motion";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";  // <-- import useNavigate
+import { useNavigate } from "react-router-dom";  
 import "./RollingGallery.css";
 
 const RollingGallery = ({ autoplay = false, pauseOnHover = false }) => {
@@ -13,7 +13,7 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false }) => {
   const controls = useAnimation();
   const autoplayRef = useRef();
 
-  const navigate = useNavigate(); // <-- initialize navigate
+  const navigate = useNavigate(); 
 
   // Charger les images depuis le backend, en filtrant celles qui ont categorieId
   useEffect(() => {
@@ -21,7 +21,7 @@ const RollingGallery = ({ autoplay = false, pauseOnHover = false }) => {
       try {
         const res = await axios.get("http://localhost:3023/api/images");
         const formatted = res.data
-          .filter(img => img.categorieId)  // garder uniquement celles avec categorieId défini
+          .filter(img => img.categorieId)  
           .map((img) => ({
             src: img.url,
             title: img.categorieId.nom,
