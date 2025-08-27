@@ -10,7 +10,7 @@ const Especes = () => {
   return (
     <>
       <div className="especeContainer">
-        <h1 className="especeTitle">🪸 Faune et flore marine côtière du 64</h1>
+        <h1 className="especeTitle">Faune et flore marine côtière du 64</h1>
         <p className="categoryInfo">Catégorie sélectionnée : <strong>{category}</strong></p>
       </div>
       {/* On passe la catégorie en prop à CircularGallery */}
