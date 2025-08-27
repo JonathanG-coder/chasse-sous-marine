@@ -38,7 +38,7 @@ const items = [
   },
   {
     label: "Preventions",
-    // link: "/preventions",
+    link: "/preventions",
     iconLight: iconPlongB,
     iconDark: iconPlongW,
   },
