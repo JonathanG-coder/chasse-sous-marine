@@ -1,5 +1,5 @@
 import Espece from "../models/Espece.js";
-import Category from "../models/Category.js"; // Import du modèle Category
+import Category from "../models/Category.js"; 
 
 // Crer une espece
 export const createEspece = async (req, res) => {

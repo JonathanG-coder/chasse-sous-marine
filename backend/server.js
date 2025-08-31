@@ -31,6 +31,7 @@ const allowedOrigins = [
   'https://chasse-sous-marine.vercel.app' // frontend production
 ];
 
+// Revoir ce bout de code : 
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -39,7 +40,7 @@ app.use(cors({
       callback(new Error(`L'origine CORS ${origin} n'est pas autorisée.`));
     }
   },
-  credentials: true,
+  // credentials: true,
 }));
 
 app.use(helmet());
